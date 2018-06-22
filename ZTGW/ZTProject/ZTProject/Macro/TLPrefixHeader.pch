@@ -1,0 +1,66 @@
+//
+//  TLPrefixHeader.pch
+//  TLYL
+//
+//  Created by mac_zhou on 2018/3/5.
+//  Copyright © 2018年 mac_zhou. All rights reserved.
+//
+
+#ifndef TLPrefixHeader_pch
+#define TLPrefixHeader_pch
+
+#define ENCRYPT_KEY @"3yx1YH314P40K7o2"
+
+#import <AFNetworking/AFNetworking.h>
+#import "TLAccountTool.h"
+#import "KPAlertView.h"
+#import "TLLogicManager.h"
+#import "NSBundle+ZYGLocal.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import "TMacroDevice.h"
+#import "UIView+Additions.h"
+#import "BaseNavController.h"
+#import <JPUSHService.h>
+#import "TLDataBase.h"
+#import <MJRefresh/MJRefresh.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <JPUSHService.h>
+#pragma mark ---请求回调状态
+typedef enum : NSUInteger {
+    CODE_SUCCESS =100000,
+    CODE_FAILED =100001,
+    CODE_TOKEN_KILLED=101000 //TOKEN干掉
+} CODE_STATE;
+
+#define KAccountModel [TLAccountTool getAccountMod]
+
+#define ZYGLocalString(value) [NSBundle zyg_localizedStringForKey:value]
+
+#define RGB(r,g,b,a)  [UIColor colorWithRed:(double)r/255.0f green:(double)g/255.0f blue:(double)b/255.0f alpha:a]
+
+//屏幕宽和高
+#define kScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define kScreenWidth  [[UIScreen mainScreen] bounds].size.width
+
+#define Max_CountTime 60//统一验证码倒计时
+
+//#define DEBUG 1 //在Release模式下,把这行注释掉,就不会打印Dlog了
+#ifdef  DEBUG
+#ifndef DLog
+#   define DLog(fmt, ...) {NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
+#endif
+#ifndef ELog
+#   define ELog(err) {if(err) DLog(@"%@", err)}
+#endif
+#else
+#ifndef DLog
+#   define DLog(...)
+#endif
+#ifndef ELog
+#   define ELog(err)
+#endif
+#endif
+
+
+#endif /* TLPrefixHeader_pch */

@@ -1,0 +1,23 @@
+
+
+target 'ZTProject' do 
+    use_frameworks! 
+
+pod 'SDCycleScrollView', '~> 1.65'
+pod 'SDWebImage','~> 3.8.2'
+pod 'SVProgressHUD'
+pod 'MBProgressHUD', '~> 1.0.0'
+pod 'IQKeyboardManager'
+pod 'JPush'
+pod 'JSONModel'
+pod 'AFNetworking'
+pod 'TTTAttributedLabel'
+pod 'NJKWebViewProgress'
+pod 'YTKKeyValueStore'
+pod 'CYLTabBarController'
+pod 'MJRefresh'
+pod 'SDWebImage'
+
+
+
+end
